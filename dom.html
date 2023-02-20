@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Elements</title>
+</head>
+
+<body>
+    <main id="main-container">
+        <section class="text-container" id="text-container-id">
+            <h1>This is a html header</h1>
+            <p id="textData">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum repudiandae cum
+                alias
+                reiciendis
+                aperiam eligendi atque culpa! Voluptatum, aut numquam cupiditate non iusto sequi quo voluptatem
+                laudantium
+                sunt id.</p>
+        </section>
+        <section class="items-container">
+            <h1 class="header-class">This is a section</h1>
+            <ul id="items-ul">
+                <li>Item-1</li>
+                <li>Item-2</li>
+                <li>Item-3</li>
+                <li>Item-4</li>
+            </ul>
+        </section>
+
+        <section class="fruit-container" id="fruit-container-id">
+            <h1 id="header-id" class="fruit-collection fruit fresh-fruit">This is another section</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Orange</li>
+                <li>Mango</li>
+            </ul>
+        </section>
+    </main>
+
+
+    <!-- ADDING EXTERNAL JS FILE -->
+    <script src="js/basicJS.js"></script>
+    <script src="js/append.js"></script>
+    <script src="js/sectionUsingJS.js"></script>
+    <script src="js/styleInJS.js"></script>
+
+    <script>
+        //option-1:  document.getElementsByTagName
+        const liCollection = document.getElementsByTagName('li');
+        // console.log("This is the output: ", liCollection);
+        for (const li of liCollection) {
+            // console.log(li.innerText);
+        }
+
+        const allHeadings = document.getElementsByTagName('h1');
+        for (const h1 of allHeadings) {
+            // console.log(h1.innerText);
+        }
+
+        //option-2: document.getElementById
+        //run on console to show outputs
+        document.getElementById('header-id')
+        document.getElementById("header-id").innerText = "Updated Text";
+
+        //option-3: getElementsByClassName
+        //run on console to show outputs
+        document.getElementsByClassName('header-class')
+        document.getElementsByClassName("header-class").innerText = "Updated Text2";
+
+        //Query Selectors
+        //querySelector --> it only return first element
+        //option-4: document.querySelector
+        const firstLi = document.querySelector('.fruit-container li');
+        // console.log(firstLi);  
+
+        //option-5: document.querySelectorAll
+        //querySelectorAll --> it  return all elements
+        const someLi = document.querySelectorAll('.fruit-container li');
+        // console.log(someLi);
+        for (const li of someLi) {
+            // console.log(li.innerText);
+        }
+
+    </script>
+</body>
+
+</html>
